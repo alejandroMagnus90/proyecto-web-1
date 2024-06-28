@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Ropa para Varones</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que el archivo CSS se llame styles.css y esté en el mismo directorio -->
+    <link rel="shortcut icon" href="/img/logo empresa.png" type="image/png">
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos -->
 </head>
 <body>
     <header>
-        <h1>ALMANAQUE</h1>
+        <img class="logo" src="/img/logo empresa.png" alt="Logo de Almanaque">
+        <h1 class="logo-text">ALMANAQUE</h1>
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
@@ -18,34 +20,36 @@
         </nav>
     </header>
     <main>
-        <section id="productos">
-            <h2>vista, ELEGANTE</h2>
-            <div class="producto">
-                <img src="ruta/de/la/imagen.jpg" alt="POLO RALPH LAUREN">
-                <h3>CAMISETA MANGA CORTA</h3>
-                <p>TELA 100% ALGODON, COLOR NEGRO, CUELLO REDONDO TALLAS S M L XL</p>
-                <p>Precio: S/ 100.00</p>
-                <button>Añadir al carrito</button>
+        <section>
+            <h2 class="titulosec">VISTA, ELEGANTE</h2>
+            <div class="productos">
+                <div class="producto">
+                    <img src="/img/polo.jpg" alt="CAMISETA MANGA CORTA">
+                    <h3>CAMISETA MANGA CORTA</h3>
+                    <p>Tela 100% algodón, color negro, cuello redondo. Tallas: S, M, L, XL.</p>
+                    <p>Precio: S/ 100.00</p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="/img/pantalon.jpg" alt="PANTALÓN">
+                    <h3>PANTALÓN</h3>
+                    <p>Tela 100% algodón, color beige. Tallas: 28 - 38.</p>
+                    <p>Precio: S/ 180.00</p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="/img/gorro.jpg" alt="GORRA">
+                    <h3>GORRA</h3>
+                    <p>Material: 30% modal, 70% algodón, color morado. Talla: ONE SIZE.</p>
+                    <p>Precio: S/ 400.00</p>
+                    <button>Añadir al carrito</button>
+                </div>
             </div>
-            <div class="producto">
-                <img src="ruta/de/la/imagen.jpg" alt="DOCKERS">
-                <h3>PANTALON</h3>
-                <p>TELA 100% ALGODON, COLOR BEIGE, TALLAS 28 - 38</p>
-                <p>Precio: S/ 180.00</p>
-                <button>Añadir al carrito</button>
-            </div><div class="producto">
-                <img src="ruta/de/la/imagen.jpg" alt="TOMMY HILGLER">
-                <h3>GORRA</h3>
-                <p>MATERIAL 30% MODAL 70% ALGODON, COLOR MORADO, TALA ONE ZIZE</p>
-                <p>Precio: S/ 400.00</p>
-                <button>Añadir al carrito</button>
-            </div>
-            <!-- Más productos aquí -->
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Tienda de Ropa para Varones</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="scripts.js"></script> <!-- Archivo JavaScript para funcionalidades -->
 </body>
 </html>

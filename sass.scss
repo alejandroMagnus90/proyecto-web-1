@@ -1,0 +1,195 @@
+$primary-color: #333;
+$secondary-color: white;
+$border-color: #ccc;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$hover-box-shadow-color: rgba(0, 0, 0, 0.2);
+$border-radius: 8px;
+$padding: 1rem;
+$margin: 1rem;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: $padding;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        padding: 10px 0;
+        display: flex; // Para alinear elementos horizontalmente
+        align-items: center;
+        max-width: 100px; // Ajusta el tamaño máximo del logo según tus necesidades
+        margin-right: 10px; // Espacio entre el logo y el texto
+
+        .logo-text {
+            font-size: 2rem; // Ajusta el tamaño del texto según sea necesario
+            margin: 0; // Elimina los márgenes predeterminados para un mejor centrado
+            padding: 0; // Elimina el relleno predeterminado para un mejor centrado
+            transition: transform 0.3s ease; // Transición suave para el efecto al pasar el cursor
+
+            &:hover {
+                transform: rotateY(2turn); // Rotación de 2 vueltas completas al pasar el cursor
+            }
+        }
+    }
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+            margin-left: 1rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+main {
+    padding: 2rem;
+}
+
+.productos {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around; // Ajusta el espacio entre los productos
+}
+
+.titulosec {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Ajuste automático del tamaño de las celdas
+    gap: 1rem; // Espacio entre las celdas
+}
+
+.producto {
+    flex: 0 0 calc(25% - $margin); // Reducir tamaño del producto a un 25% del contenedor menos 1rem de espacio
+    padding: $padding; // Espacio interior dentro de cada producto
+    text-align: center; // Alineación del texto dentro de cada producto al centro horizontal
+    border: 1px solid $border-color; // Borde del producto con color gris claro
+    box-sizing: border-box; // Incluye el borde y el padding en el cálculo del tamaño total del producto
+    margin-bottom: $margin; // Espacio inferior entre productos
+    box-shadow: 0 2px 4px $box-shadow-color; // Sombra ligera alrededor del producto
+    border-radius: $border-radius; // Esquinas redondeadas del producto
+    display: flex; // Para que los elementos dentro del producto se alineen en una columna
+    flex-direction: column; // Alinear elementos en columna dentro del producto
+    justify-content: center; // Centrar verticalmente los elementos dentro del producto
+    transition: box-shadow 0.3s ease; // Transición suave para la sombra al pasar el cursor
+
+    &:hover {
+        box-shadow: 0 4px 8px $hover-box-shadow-color; // Sombra más intensa al pasar el cursor
+    }
+
+    img {
+        width: 30%; // Imágenes dentro del producto ocupan el ancho completo del contenedor
+        height: auto; // Altura automática para mantener la proporción
+        display: block; // Asegura que la imagen se muestre como bloque para aplicar el margin: auto; correctamente
+        margin: auto; // Centra la imagen horizontalmente
+        border-radius: $border-radius; // Esquinas redondeadas
+        box-shadow: 0 4px 8px $box-shadow-color; // Sombra ligera
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Transición suave para el efecto al pasar el cursor
+
+        &:hover {
+            box-shadow: 0 8px 16px $hover-box-shadow-color; // Sombra más intensa al pasar el cursor
+            transform: scale(1.05); // Efecto de escala al pasar el cursor
+        }
+    }
+
+    &:nth-child(2n) {
+        flex: 0 0 calc(25% - $margin); // Este producto ocupará el 50% del contenedor
+    }
+
+    &:nth-child(3n) {
+        flex: 0 0 calc(25% - $margin); // Este producto ocupará el 75% del contenedor
+    }
+
+    &:nth-child(4n) {
+        flex: 0 0 calc(25% - $margin); // Este producto ocupará el 25% del contenedor, restableciendo el tamaño original
+    }
+
+    h3 {
+        margin-top: 0.5rem;
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    button {
+        background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); // Degradado de colores arco iris
+        color: $secondary-color;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle; // Alinea verticalmente el texto
+        border-radius: 4px; // Borde redondeado
+        position: relative; // Para usar posición relativa
+        overflow: hidden; // Oculta el desbordamiento
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); // Degradado de colores arco iris
+            transition: left 0.6s linear; // Transición suave del movimiento
+        }
+
+        &:hover::before {
+            left: 150%; // Desplaza el degradado a la derecha al pasar el cursor
+        }
+
+        &:hover {
+            color: $secondary-color; // Cambia el color del texto al pasar el cursor
+        }
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-align: center;
+    padding: $padding;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .producto {
+        flex: 0 0 calc(50% - $margin); // Dos productos por fila en pantallas más pequeñas
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        flex: 0 0 calc(100% - $margin); // Un producto por fila en pantallas aún más pequeñas
+    }
+}
